@@ -1,4 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VDsoft.TextProcessor.Infrastructure\VDsoft.TextProcessor.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="TestData\TextFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

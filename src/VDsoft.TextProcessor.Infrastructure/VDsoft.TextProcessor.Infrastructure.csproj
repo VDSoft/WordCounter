@@ -1,3 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <ItemGroup>
+    <ProjectReference Include="..\VDsoft.TextProcessor.BusinessLogic\VDsoft.TextProcessor.BusinessLogic.csproj" />
+  </ItemGroup>
 </Project>
