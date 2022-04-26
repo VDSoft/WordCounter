@@ -21,6 +21,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark", "test\Benchmark\Benchmark.csproj", "{7D5655E5-C15D-44CD-B089-5364E9F3164C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF9C0D73-CCD4-4127-8C82-C4013B1EAF61}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VDsoft.TextProcessor.Ui", "src\VDsoft.TextProcessor.Ui\VDsoft.TextProcessor.Ui.csproj", "{4C1917FE-9B2B-489E-9A24-52CC51B935D9}"
 EndProject
