@@ -19,7 +19,7 @@ public class ReadAsync
         var actual = await sut.ReadFileAsync(testFilePath, tokenSource.Token);
 
         // Assert
-        actual.Should().NotBeNullOrWhiteSpace().And.Be("Content of the test file should be read");
+        actual.Should().NotBeNullOrWhiteSpace().And.Be("Content of the test file should be read <- a white space should be here");
     }
 
     [Fact]

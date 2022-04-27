@@ -36,7 +36,7 @@ namespace VDsoft.TextProcessor.BusinessLogic.Processor
             return countedWords.ToDictionary(k => k.Key, v => v.Value);
         }
 
-        private static string[] SplitTextBySeparator(string text, char separator) => text.Split(separator);
+        private static string[] SplitTextBySeparator(string text, char separator) => text.Split(separator).Where(x => x != string.Empty).ToArray();
 
         private static ConcurrentDictionary<string, int> CountWordsParallel(string[] splittedText, CancellationToken cancellationToken)
         {

@@ -9,7 +9,7 @@ namespace VDsoft.TextProcessor.Infrastructure;
 public class FileReader : IFileReader
 {
     /// <inheritdoc/>
-    public Task<string> ReadFileAsync(string filePath, CancellationToken cancellationToken)
+    public async Task<string> ReadFileAsync(string filePath, CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(filePath))
         {
@@ -26,6 +26,6 @@ public class FileReader : IFileReader
             throw new FileNotFoundException($"The file '{filePath}' does not exist");
         }
 
-        return File.ReadAllTextAsync(filePath, cancellationToken);
+        return string.Join(" ", await File.ReadAllLinesAsync(filePath, cancellationToken));
     }
 }
