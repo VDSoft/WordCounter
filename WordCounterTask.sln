@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C6C3A00B-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{98FE6DF9-1C20-442C-8A85-A8184DDFBF2B}"
 	ProjectSection(SolutionItems) = preProject
-		config\.editorconfig = config\.editorconfig
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF9C0D73-CCD4-4127-8C82-C4013B1EAF61}"

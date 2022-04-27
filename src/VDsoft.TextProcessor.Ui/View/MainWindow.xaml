@@ -19,7 +19,8 @@
             <RowDefinition Height="90px"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <!--Header and file selector-->
+        
+        <!--File selector-->
         <StackPanel Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
@@ -34,6 +35,7 @@
                     Click="ButtonBrowse_Click"
                     Style="{StaticResource ButtonStyle}"/>
         </StackPanel>
+        
         <!-- Process actions-->
         <StackPanel Orientation="Vertical"
                     VerticalAlignment="Center"
@@ -61,6 +63,8 @@
                         Style="{StaticResource ButtonStyle}"/>
             </StackPanel>
         </StackPanel>
+        
+        <!--Main content-->
         <DataGrid ItemsSource="{Binding Words, Mode=OneWay}"
                   Grid.Row="2"
                   CanUserAddRows="False"

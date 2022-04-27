@@ -1,4 +1,8 @@
-﻿namespace VDsoft.TextProcessor.Ui.Model;
+﻿// <copyright company="VDSoft" file="WordCount.cs">
+//    Copyright (C) VDSoft. All rights reserved. Confidential.
+// </copyright>
+
+namespace VDsoft.TextProcessor.Ui.Model;
 
 /// <summary>
 /// Represents a word with the count how often it occurs in a text.

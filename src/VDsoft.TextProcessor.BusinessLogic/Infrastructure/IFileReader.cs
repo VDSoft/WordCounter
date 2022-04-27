@@ -1,4 +1,8 @@
-﻿namespace VDsoft.TextProcessor.BusinessLogic.Infrastructure;
+﻿// <copyright company="VDSoft" file="IFileReader.cs">
+//    Copyright (C) VDSoft. All rights reserved. Confidential.
+// </copyright>
+
+namespace VDsoft.TextProcessor.BusinessLogic.Infrastructure;
 
 /// <summary>
 /// Defines a file reader to access the file system.

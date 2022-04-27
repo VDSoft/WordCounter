@@ -1,4 +1,8 @@
-﻿using VDsoft.TextProcessor.BusinessLogic.Infrastructure;
+﻿// <copyright company="VDSoft" file="FileReader.cs">
+//    Copyright (C) VDSoft. All rights reserved. Confidential.
+// </copyright>
+
+using VDsoft.TextProcessor.BusinessLogic.Infrastructure;
 
 namespace VDsoft.TextProcessor.Infrastructure;
 

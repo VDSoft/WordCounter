@@ -1,35 +1,37 @@
-﻿using Microsoft.Win32;
+﻿// <copyright company="VDSoft" file="MainWindow.xaml.cs">
+//    Copyright (C) VDSoft. All rights reserved. Confidential.
+// </copyright>
+
+using Microsoft.Win32;
 using System.Windows;
 
-namespace VDsoft.TextProcessor.Ui.View
+namespace VDsoft.TextProcessor.Ui.View;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Initializes a new instance of the <see cref="MainWindow"/> class.
     /// </summary>
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow"/> class.
-        /// </summary>
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void ButtonBrowse_Click(object sender, RoutedEventArgs e)
+    private void ButtonBrowse_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFileDialog()
         {
-            var dialog = new OpenFileDialog()
-            {
-                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                Multiselect = false,
-                RestoreDirectory = true
-            };
+            Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
+            InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+            Multiselect = false
+        };
 
-            if (dialog.ShowDialog() == true)
-            {
-                TextBoxFilePath.Text = dialog.FileName;
-            }
+        if (dialog.ShowDialog() == true)
+        {
+            TextBoxFilePath.Text = dialog.FileName;
         }
     }
 }
