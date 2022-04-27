@@ -2,8 +2,17 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:VDsoft.TextProcessor.Ui"
-             StartupUri="View.MainWindow.xaml">
+             xmlns:customConverter="clr-namespace:VDsoft.TextProcessor.Ui.Converter"
+             StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/AppStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!--Converter-->
+            <customConverter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <customConverter:InverstBoolConverter x:Key="InverstBoolConverter"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

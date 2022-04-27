@@ -3,10 +3,83 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VDsoft.TextProcessor.Ui"
+        xmlns:ViewModel="clr-namespace:VDsoft.TextProcessor.Ui.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Word Counter" 
+        Height="500" 
+        Width="800"
+        MinHeight="500"
+        MinWidth="800">
+    <Window.DataContext>
+        <ViewModel:MainViewModel x:Name="viewModel"/>
+    </Window.DataContext>
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42px"/>
+            <RowDefinition Height="90px"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <!--Header and file selector-->
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0">
+            <Label Content="Text file to parse:"
+                   Style="{StaticResource LabelStyle}"/>
+            <TextBox x:Name="TextBoxFilePath"
+                     MinWidth="500px"
+                     MaxWidth="500px"
+                     Style="{StaticResource TextBoxStyle}"/>
+            <Button x:Name="ButtonBrowse" Content="Browse"
+                    Click="ButtonBrowse_Click"
+                    Style="{StaticResource ButtonStyle}"/>
+        </StackPanel>
+        <!-- Process actions-->
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Grid.Row="1">
+            <Button Command="{Binding ReadFileAsyncCommand}"
+                    CommandParameter="{Binding Text, ElementName=TextBoxFilePath}"
+                    Content="Count words"
+                    IsEnabled="{Binding IsProcessing, Converter={StaticResource InverstBoolConverter}}"
+                    Style="{StaticResource ButtonStyle}"/>
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        MinWidth="400px"
+                        Visibility="{Binding IsProcessing, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Grid>
+                    <ProgressBar MinHeight="15px"
+                                 IsIndeterminate="True"/>
+                    <TextBlock Text="Yes, I took a short cut here ;-)"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Grid>
+                <Button Command="{Binding CancelOperationCommand}"
+                        Content="Cancel"
+                        Style="{StaticResource ButtonStyle}"/>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid ItemsSource="{Binding Words, Mode=OneWay}"
+                  Grid.Row="2"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserSortColumns="True"
+                  CanUserReorderColumns="False"
+                  AlternatingRowBackground="LightGray"
+                  AlternationCount="2"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Word"
+                                    Binding="{Binding Path=Word}"
+                                    IsReadOnly="True"
+                                    MinWidth="28"/>
+                <DataGridTextColumn Header="Count"
+                                    Binding="{Binding Path=Count}"
+                                    IsReadOnly="True"
+                                    MinWidth="1"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

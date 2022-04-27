@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ 
+    <!--Label style-->
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="15px" />
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+    <!--End Label style-->
+    
+    <!--Text box style-->
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Setter Property="FontSize" Value="15px" />
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+    <!--End Text box style-->
+    
+    <!--Button style-->
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="MinWidth" Value="60px"/>
+        <Setter Property="MinHeight" Value="25px"/>
+        <Setter Property="FontSize" Value="15px" />
+        <Setter Property="MaxWidth" Value="250px"/>
+    </Style>
+    <!--End Button style-->
+    
+    
+    
+</ResourceDictionary>
